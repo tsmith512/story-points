@@ -15,15 +15,13 @@ html {
 // Variables
 $max-width: 1200px;
 
-// Colors
-$black: #0A0A0A;
-$navy: #203961;
-$blue: #205587;
-$white: #F6F6F6;
+$green: #35AA4E;
 
 body {
   font-family: 'Catamaran', sans-serif;
   font-size: 1.125em;
+  color: #333;
+  background: #F2F2F2;
 }
 
 h1, h2, h3 {
@@ -45,6 +43,7 @@ header {
   h1 {
     margin-bottom: 0.25em;
     font-family: 'Abril Fatface', cursive;
+    color: $green;
 
     font-size: 2em;
     @include breakpoint(600px) { font-size: 3em; }
@@ -72,6 +71,7 @@ h3 {
 
   text-align: center;
   font-family: 'Nixie One', cursive;
+  color: $green;
 
   font-size: 1em;
   @include breakpoint(600px) { font-size: 1.25em; letter-spacing: 2px; }
@@ -115,12 +115,13 @@ dl {
   }
 
   dt, dd {
-    padding: 0.5em;
+    padding: 0.5em 0;
   }
 
   dt {
     font-weight: bold;
-    border-bottom: 1px solid black;
+    color: $green;
+    border-bottom: 1px solid $green;
   }
 
   dd {
@@ -152,7 +153,6 @@ ul.points {
     width: 100%;
     @include breakpoint(450px) { width: calc(50% - 1em); }
     @include breakpoint(800px) { width: calc(33.33% - 1em); }
-    @include breakpoint(1000px) { width: calc(25% - 1em); }
     @include breakpoint(1200px) { width: auto; flex-grow: 1; flex-basis: 0; }
   }
 
@@ -173,10 +173,12 @@ ul.samples {
       border-bottom: 0;
     }
   }
+
+  li.danger { font-weight: bold; }
 }
 
 .danger {
-  color: #E60000;
+  color: #999;
 }
 
 footer {
@@ -194,5 +196,6 @@ footer {
 
   a {
     text-decoration: none;
+    color: #0066FF;
   }
 }
