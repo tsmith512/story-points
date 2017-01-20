@@ -153,7 +153,7 @@ ul.points {
     @include breakpoint(450px) { width: calc(50% - 1em); }
     @include breakpoint(800px) { width: calc(33.33% - 1em); }
     @include breakpoint(1000px) { width: calc(25% - 1em); }
-    @include breakpoint(1200px) { width: auto; flex-grow: 1; }
+    @include breakpoint(1200px) { width: auto; flex-grow: 1; flex-basis: 0; }
   }
 
   strong {
@@ -173,6 +173,10 @@ ul.samples {
       border-bottom: 0;
     }
   }
+}
+
+.danger {
+  color: #E60000;
 }
 
 footer {
