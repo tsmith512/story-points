@@ -25,6 +25,15 @@ body {
   background: #F2F2F2;
 }
 
+a {
+  text-decoration: none;
+  color: #0066FF;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 h1, h2, h3 {
   margin: 0;
   line-height: 1.15;
@@ -88,7 +97,9 @@ dl, dt, dd {
   margin: 0;
 }
 
-article {
+// Not a <video>, just a link to one
+.video {
+  font-weight: bold;
 }
 
 // So WHATWG, dt/dd items can be wrapped in divs. Not semantically valid
@@ -199,11 +210,6 @@ footer {
     text-align: center;
     margin: 0 auto;
     max-width: $max-width;
-  }
-
-  a {
-    text-decoration: none;
-    color: #0066FF;
   }
 
   // Don't break lines awkwardly.
