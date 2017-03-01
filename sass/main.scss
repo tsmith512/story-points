@@ -16,6 +16,7 @@ html {
 $max-width: 1200px;
 
 $green: #35AA4E;
+$red: #CC3300;
 
 body {
   font-family: 'Catamaran', sans-serif;
@@ -178,7 +179,7 @@ ul.samples {
 }
 
 .danger {
-  color: #999;
+  color: $red;
 }
 
 footer {
@@ -197,5 +198,10 @@ footer {
   a {
     text-decoration: none;
     color: #0066FF;
+  }
+
+  // Don't break lines awkwardly.
+  span {
+    display: inline-block;
   }
 }
