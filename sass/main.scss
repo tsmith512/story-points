@@ -19,18 +19,18 @@ html {
 // Variables
 $max-width: 1200px;
 
-$background: #031634;
-$foreground: #E8DDCB;
-$accent: #E97F02;
-$headers: lighten(#036564, 5%);
-$warning: #E97F02;
-$link: #E97F02;
+$background: #403B33;
+$foreground: #EDEBE6;
+$accent: #D6E1C7;
+$headers: #D3643B;
+$warning: #ff320e;
+$link: #53ddaf;
 
 body {
   font-family: $sentinel;
   font-size: 1.125em;
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.625;
   color: $foreground;
   background: $background;
 }
@@ -84,8 +84,12 @@ header {
     letter-spacing: 2px;
     @include breakpoint(600px) { font-size: 1.25em; letter-spacing: 3px; }
     @include breakpoint(900px) { font-size: 1.5em; letter-spacing: 5px; }
+    @include breakpoint(max-width 1199px) {
+      text-shadow: 1px 1px 0 black;
+    }
     @include breakpoint(1200px) {
-      font-weight: 700; text-shadow: 1px 1px 0 $background;
+      font-weight: 700;
+      text-shadow: 1px 1px 0 black, 3px 3px 0 $background;
       margin-bottom: 1em;
     }
     @include breakpoint(1400px) {
@@ -108,8 +112,9 @@ h3 {
   font-style: italic;
 
   font-size: 1em;
-  @include breakpoint(600px) { font-size: 1.25em; }
-  @include breakpoint(900px) { font-size: 1.5em; }
+  @include breakpoint(600px) { font-size: 1.5em; }
+  @include breakpoint(900px) { font-size: 1.75em; }
+  @include breakpoint(1200px) { font-size: 2.5em; }
 }
 
 dl {
@@ -163,6 +168,7 @@ dl {
   }
 
   dd {
+    font-size: 0.975em;
     @include breakpoint(700px) { margin-bottom: 1em; }
   }
 
@@ -215,8 +221,9 @@ ul.points {
 
 ul.samples {
   li {
+    font-size: 0.875em;
     padding: 0.5em 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba($headers, 0.25);
 
     &:last-child {
       border-bottom: 0;
