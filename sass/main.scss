@@ -19,12 +19,12 @@ html {
 // Variables
 $max-width: 1200px;
 
-$background: #490A3D;
-$foreground: #FFEAAD;
+$background: #031634;
+$foreground: #E8DDCB;
 $accent: #E97F02;
-$headers: #BD1550;
-$warning: #F8CA00;
-$link: #8A9B0F;
+$headers: lighten(#036564, 5%);
+$warning: #E97F02;
+$link: #E97F02;
 
 body {
   font-family: $sentinel;
