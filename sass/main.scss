@@ -4,6 +4,10 @@
 // Normalize
 @import "../node_modules/normalize-css/normalize.css";
 
+$gotham: "Gotham SSm A", "Gotham SSm B";
+$obsidian: "Obsidian A", "Obsidian B";
+$sentinel: "Sentinel SSm A", "Sentinel SSm B";
+
 // https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 html {
   box-sizing: border-box;
@@ -15,19 +19,26 @@ html {
 // Variables
 $max-width: 1200px;
 
-$green: #35AA4E;
-$red: #CC3300;
+$background: #403B33;
+$foreground: #EBDECC;
+$accent: #D6E1C7;
+$headers: #D3643B;
+$good: #4cde6c;
+$warning: #ff320e;
+$link: #4094ed;
 
 body {
-  font-family: 'Catamaran', sans-serif;
+  font-family: $sentinel;
   font-size: 1.125em;
-  color: #333;
-  background: #F2F2F2;
+  font-weight: 300;
+  line-height: 1.625;
+  color: $foreground;
+  background: $background url("../gfx/bg.png") repeat;
 }
 
 a {
   text-decoration: none;
-  color: #0066FF;
+  color: $link;
 
   &:hover {
     text-decoration: underline;
@@ -40,35 +51,51 @@ h1, h2, h3 {
 }
 
 header {
+  overflow: hidden;
   @include breakpoint(400px) { padding: 1em; }
   @include breakpoint(700px) { padding: 2em 1em; }
-  @include breakpoint(900px) { padding: 4em 1em 2em 1em; }
+  @include breakpoint(1200px) { padding: 2em 1em 4em; }
 
   h1, h2 {
     margin: 0 auto;
-    max-width: $max-width;
     text-align: center;
   }
 
   h1 {
     margin-bottom: 0.25em;
-    font-family: 'Abril Fatface', cursive;
-    color: $green;
+    line-height: 1;
+    font-family: $obsidian;
+    font-weight: 400;
+    color: $headers;
 
-    font-size: 2em;
-    @include breakpoint(600px) { font-size: 3em; }
-    @include breakpoint(800px) { font-size: 4.5em; }
-    @include breakpoint(1000px) { font-size: 6em; }
+    font-size: 3em;
+    @include breakpoint(600px) { font-size: 4em; }
+    @include breakpoint(800px) { font-size: 5em; }
+    @include breakpoint(1200px) { margin: 0 -2em -0.35em; font-size: 13em; }
+    @include breakpoint(1400px) { font-size: 15em; }
   }
 
   h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $gotham;
     text-transform: uppercase;
+    font-weight: 500;
+    color: $accent;
 
     font-size: 1em;
     letter-spacing: 2px;
     @include breakpoint(600px) { font-size: 1.25em; letter-spacing: 3px; }
     @include breakpoint(900px) { font-size: 1.5em; letter-spacing: 5px; }
+    @include breakpoint(max-width 1199px) {
+      text-shadow: 1px 1px 0 black;
+    }
+    @include breakpoint(1200px) {
+      font-weight: 700;
+      text-shadow: 3px 3px 0 $background;
+      margin-bottom: 1em;
+    }
+    @include breakpoint(1400px) {
+      margin-bottom: 1.5em;
+    }
   }
 }
 
@@ -80,12 +107,15 @@ h3 {
   @include breakpoint(600px) { padding: 1em; }
 
   text-align: center;
-  font-family: 'Nixie One', cursive;
-  color: $green;
+  font-family: $sentinel;
+  color: $headers;
+  font-weight: 700;
+  font-style: italic;
 
   font-size: 1em;
-  @include breakpoint(600px) { font-size: 1.25em; letter-spacing: 2px; }
-  @include breakpoint(900px) { font-size: 1.5em; }
+  @include breakpoint(600px) { font-size: 1.5em; }
+  @include breakpoint(900px) { font-size: 1.75em; }
+  @include breakpoint(1200px) { font-size: 2.5em; }
 }
 
 dl {
@@ -131,13 +161,20 @@ dl {
   }
 
   dt {
+    font-family: $gotham;
+    font-weight: 500;
     font-weight: bold;
-    color: $green;
-    border-bottom: 1px solid $green;
+    color: $headers;
+    border-bottom: 1px solid rgba($headers, 0.5);
   }
 
   dd {
+    font-size: 0.975em;
     @include breakpoint(700px) { margin-bottom: 1em; }
+  }
+
+  p {
+    margin-top: 0;
   }
 }
 
@@ -152,6 +189,14 @@ p.jira-disclaimer {
   text-align: center;
   max-width: 42em;
   margin: 0 auto;
+}
+
+p.not-pictured {
+  text-align: center;
+  color: mix($foreground, $background, 50%);
+  max-width: 42em;
+  margin: 0 auto;
+  font-style: italic;
 }
 
 ul.points {
@@ -177,15 +222,18 @@ ul.points {
   strong {
     display: block;
     text-align: center;
-    font-size: 4em;
-    font-family: 'Abril Fatface', cursive;
+    font-size: 5em;
+    font-family: $obsidian;
+    font-weight: 400;
+    text-shadow: 0 10px 40px rgba(0,0,0,0.5);
   }
 }
 
 ul.samples {
   li {
+    font-size: 0.875em;
     padding: 0.5em 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba($headers, 0.25);
 
     &:last-child {
       border-bottom: 0;
@@ -195,13 +243,17 @@ ul.samples {
   li.danger { font-weight: bold; }
 }
 
+.good {
+  color: mix($good, $foreground);
+}
+
 .danger {
-  color: $red;
+  color: $warning;
 }
 
 footer {
   padding: 2em 0 4em 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $gotham;
   text-transform: uppercase;
   font-size: 0.75em;
   letter-spacing: 2px;

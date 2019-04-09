@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Story Points | Four Kitchens</title>
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Catamaran:300,600|Montserrat:400,700|Nixie+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6795652/7049412/css/fonts.css" />
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -45,7 +45,7 @@
           </dd>
         </div>
         <div>
-          <dt>So how do you estimate with this?</dt>
+          <dt>How does this help?</dt>
           <dd>
             Over time, a team's average velocity will reveal about how much
             complexity they can build in a given time. This helps predict how
@@ -79,7 +79,7 @@
           </dd>
         </div>
         <div>
-          <dt>We've used &ldquo;shirt sizes&rdquo; lately.</dt>
+          <dt>What about &ldquo;shirt sizes?&rdquo;</dt>
           <dd>
             Nothing wrong with that, but S + L isn't mathematically useful the
             same way 3 + 13 is. Story point values are 1, 3, 5, 8, 13, and 20.
@@ -102,28 +102,28 @@
             <li>Change one field label.</li>
           </ul>
         </li>
-        <li><strong>3</strong>
+        <li><strong class="good">3</strong>
           <ul class="samples">
             <li>Add and theme straightforward field.</li>
             <li>Add a View or Panel pane using UI options.</li>
             <li>Install and simple contrib module.</li>
           </ul>
         </li>
-        <li><strong>5</strong>
+        <li><strong class="good">5</strong>
           <ul class="samples">
             <li>Enable commenting with known provider or module.</li>
             <li>Mostly themed Webform implementations.</li>
             <li>General to moderate meta, SEO, or analytics integrations.</li>
           </ul>
         </li>
-        <li><strong>8</strong>
+        <li><strong class="good">8</strong>
           <ul class="samples">
             <li>Interactive Views with programmatic manipulation or complex theming.</li>
             <li>Nonstandard config of Workbench or Organic Groups.</li>
             <li>Create and theme involved content types with Media and/or relationships.</li>
           </ul>
         </li>
-        <li><strong>13</strong>
+        <li><strong class="good">13</strong>
           <ul class="samples">
             <li>Robust Solr search features like combined faceting, filtering, or index alterations.</li>
             <li>REST API integrations, SSO implementation, ingesting feeds, migrations.</li>
@@ -138,6 +138,13 @@
           </ul>
         </li>
       </ul>
+      <p class="not-pictured">
+        <strong>Not pictured, but acceptable:</strong> <span class="good">2</span>,
+        <span class="danger">40</span>, and
+        <span class="danger">100</span>. Since it's rarely actually a 1, but it
+        can be easier than a 3, sometimes we settle on 2. 40 and 100 must be
+        broken down, and we often use them for placeholder epics.
+      </p>
       <footer>
         <p>
           <span>Created by <a href="http://github.com/tsmith512">Taylor Smith</a></span> for
