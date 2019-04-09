@@ -19,21 +19,25 @@ html {
 // Variables
 $max-width: 1200px;
 
-$green: #35AA4E;
-$red: #CC3300;
+$background: #1C2130;
+$foreground: #FFEAAD;
+$accent: #B3E099;
+$headers: #028F76;
+$warning: #D14334;
+$link: #0066FF;
 
 body {
   font-family: $sentinel;
   font-size: 1.125em;
   font-weight: 300;
   line-height: 1.5;
-  color: #333;
-  background: #F2F2F2;
+  color: $foreground;
+  background: $background;
 }
 
 a {
   text-decoration: none;
-  color: #0066FF;
+  color: $link;
 
   &:hover {
     text-decoration: underline;
@@ -61,7 +65,7 @@ header {
     line-height: 1;
     font-family: $obsidian;
     font-weight: 400;
-    color: $green;
+    color: $headers;
 
     font-size: 3em;
     @include breakpoint(600px) { font-size: 4em; }
@@ -74,13 +78,14 @@ header {
     font-family: $gotham;
     text-transform: uppercase;
     font-weight: 500;
+    color: $accent;
 
     font-size: 1em;
     letter-spacing: 2px;
     @include breakpoint(600px) { font-size: 1.25em; letter-spacing: 3px; }
     @include breakpoint(900px) { font-size: 1.5em; letter-spacing: 5px; }
     @include breakpoint(1200px) {
-      font-weight: 700; text-shadow: 1px 1px 0 #F2F2F2;
+      font-weight: 700; text-shadow: 1px 1px 0 $background;
       margin-bottom: 1em;
     }
     @include breakpoint(1400px) {
@@ -98,7 +103,7 @@ h3 {
 
   text-align: center;
   font-family: $sentinel;
-  color: $green;
+  color: $headers;
   font-weight: 700;
   font-style: italic;
 
@@ -153,8 +158,8 @@ dl {
     font-family: $gotham;
     font-weight: 500;
     font-weight: bold;
-    color: $green;
-    border-bottom: 1px solid $green;
+    color: $headers;
+    border-bottom: 1px solid $headers;
   }
 
   dd {
@@ -222,7 +227,7 @@ ul.samples {
 }
 
 .danger {
-  color: $red;
+  color: $warning;
 }
 
 footer {
