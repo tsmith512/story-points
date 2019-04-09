@@ -164,7 +164,7 @@ dl {
     font-weight: 500;
     font-weight: bold;
     color: $headers;
-    border-bottom: 1px solid $headers;
+    border-bottom: 1px solid rgba($headers, 0.5);
   }
 
   dd {
@@ -188,6 +188,14 @@ p.jira-disclaimer {
   text-align: center;
   max-width: 42em;
   margin: 0 auto;
+}
+
+p.not-pictured {
+  text-align: center;
+  color: mix($foreground, $background, 50%);
+  max-width: 42em;
+  margin: 0 auto;
+  font-style: italic;
 }
 
 ul.points {
