@@ -3,7 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - nvm install
+        - nvm use
+        - npm install
         - npm install -g gulp
     build:
       commands:
