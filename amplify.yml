@@ -10,6 +10,9 @@ frontend:
     build:
       commands:
         - gulp sass
+        - mkdir fonts
+        - wget $ASSETS_FOLDER/811475.zip
+        - unzip 811475.zip -d fonts/
   artifacts:
     baseDirectory: .
     files:
