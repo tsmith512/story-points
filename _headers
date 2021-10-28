@@ -1,0 +1,4 @@
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy: frame-ancestors 'none'; default-src 'self' https://cloudflareinsights.com https://www.google-analytics.com https://cloud.typography.com; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js https://www.google-analytics.com/analytics.js 'sha256-3wwq9+eFRVvuugJlUH5CjH03+XWL927jJdLVPHWmSEU=';
