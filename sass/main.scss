@@ -132,6 +132,11 @@ dl, dt, dd {
   font-weight: bold;
 }
 
+.scrummy {
+  font-weight: bold;
+  color: #38a65a;
+}
+
 // So WHATWG, dt/dd items can be wrapped in divs. Not semantically valid
 // per ratified spec, but not wrapping these items was stupidly complex.
 dl {
