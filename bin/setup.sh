@@ -1,10 +1,13 @@
 #/usr/bin/env bash
 
-if [ -z "$ASSETS_FOLDER" ]; then
+if [ -z "$WEBFONTS" ]; then
   echo "Assets package not specified"
   exit 1;
 fi
 
-mkdir fonts
-wget $ASSETS_FOLDER/811475.zip
-unzip 811475.zip -d fonts/
+curl $WEBFONTS \
+  -L -H "CF-Access-Client-Id: ${R2_CLIENT}" \
+  -H "CF-Access-Client-Secret: ${R2_SECRET}" \
+  -o webfonts.zip
+
+unzip webfonts.zip -d fonts/
